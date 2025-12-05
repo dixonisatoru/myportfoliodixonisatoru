@@ -1,0 +1,206 @@
+:root {
+    --primary: #23272f;
+    --secondary: #f5f6fa;
+    --bg: #181a1b;
+    --white: #fff;
+    --accent: #2d313a;
+    --highlight: #bdbdbd;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #181a1b 0%, #23272f 100%);
+    color: var(--secondary);
+    min-height: 100vh;
+}
+
+header {
+    background: linear-gradient(90deg, var(--primary) 60%, #181a1b 100%);
+    color: var(--white);
+    padding: 2.5rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0 0 24px 24px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+}
+
+.logo {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 2.6rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #23272f;
+    background: none;
+    text-shadow: 0 2px 8px #e5e7eb;
+    transition: color 0.3s, letter-spacing 0.3s, text-shadow 0.3s, transform 0.3s;
+    cursor: pointer;
+}
+.logo:hover {
+    color: #4b5563;
+    letter-spacing: 6px;
+    text-shadow: 0 4px 16px #bdbdbd;
+    transform: scale(1.04);
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    margin-left: 2.5rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: color 0.2s, border-bottom 0.2s;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 2px;
+}
+nav a.active, nav a:hover {
+    color: var(--highlight);
+    border-bottom: 2px solid var(--highlight);
+}
+
+main {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+.projects-section {
+    background: var(--accent);
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+     box-shadow: 0 6px 32px rgba(0,0,0,0.18);
+    margin-bottom: 3rem;
+    
+}
+
+.projects-section h2 {
+    font-size: 2.4rem;
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.projects-intro {
+    font-size: 1.1rem;
+    color: white;
+    margin-bottom: 2rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project-item {
+    background: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(75,85,99,0.10);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.project-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(75,85,99,0.15);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background: #f0f0f0;
+}
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+.project-item:hover .project-image img {
+    transform: scale(1.08);
+}
+
+.project-info {
+    padding: 1.5rem;
+}
+
+.project-info h3 {
+    font-size: 1.4rem;
+    color: black;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.tech-stack {
+    font-size: 0.95rem;
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+}
+
+.project-description {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-primary, .btn-secondary {
+    flex: 1;
+    padding: 0.6em 1em;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: var(--white);
+}
+.btn-primary:hover {
+    background: #6b7280;
+}
+
+.btn-secondary {
+    background: var(--accent);
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+.btn-secondary:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    background: linear-gradient(90deg, #181a1b 0%, var(--primary) 100%);
+    color: var(--white);
+    margin-top: 3rem;
+    border-radius: 0 0 24px 24px;
+    font-size: 1.15rem;
+    letter-spacing: 1px;
+    box-shadow: 0 -2px 16px rgba(0,0,0,0.14);
+}
+@media (max-width: 900px) {
+    main {
+        padding: 0 1rem;
+    }
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .projects-section {
+        padding: 1.5rem 1rem;
+    }
+}
